@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Humanize AI | Free Tool for Students & Workers</title>
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2103/2103633.png">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="humanize.css">
 </head>
@@ -116,12 +123,21 @@
     <footer class="py-5 border-top bg-white">
         <div class="container text-center">
             <p class="fw-bold mb-2">Humanize AI Tool</p>
-            <p class="text-muted small mb-0">&copy; 2025 Built with passion by Ensar Gashi for a better community.</p>
+            <p class="text-muted small mb-0">&copy; 2026 Built with passion by Ensar Gashi for a better community.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="humanize.js"></script>
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('Service Worker u regjistrua me sukses!'))
+            .catch(err => console.log('Dështoi regjistrimi i Service Worker:', err));
+        });
+      }
+    </script>
 </body>
 </html>
-
